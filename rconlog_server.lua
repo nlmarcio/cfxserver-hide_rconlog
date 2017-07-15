@@ -1,4 +1,4 @@
-RconLog({ msgType = 'serverStart', hostname = 'www.nobrain.org', maxplayers = 32 })
+RconLog({ msgType = 'serverStart', hostname = 'lovely', maxplayers = 32 })
 
 RegisterServerEvent('rlPlayerActivated')
 
@@ -7,8 +7,8 @@ local SecureMode = true
 
 AddEventHandler('rlPlayerActivated', function()
 	if SecureMode then
-		local HideIp = "No Brain : Ip player secure"
-		local HideSteamId = "No Brain : SteamId player secure"
+		local HideIp = "Ip player secure"
+		local HideSteamId = "SteamId player secure"
 		RconLog({ msgType = 'playerActivated', netID = source, name = GetPlayerName(source), guid = HideSteamId, ip = HideIp })
 	else
 		RconLog({ msgType = 'playerActivated', netID = source, name = GetPlayerName(source), guid = GetPlayerIdentifiers(source)[1], ip = GetPlayerEP(source) })
