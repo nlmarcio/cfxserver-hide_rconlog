@@ -1,4 +1,4 @@
-RconLog({ msgType = 'serverStart', hostname = 'lovely', maxplayers = 32 })
+RconLog({ msgType = 'serverStart', hostname = 'www.nobrain.org', maxplayers = 32 })
 
 RegisterServerEvent('rlPlayerActivated')
 
