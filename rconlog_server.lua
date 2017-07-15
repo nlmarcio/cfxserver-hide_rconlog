@@ -53,7 +53,13 @@ AddEventHandler('playerDropped', function()
 end)
 
 AddEventHandler('chatMessage', function(netID, name, message)
-    RconLog({ msgType = 'chatMessage', netID = netID, name = name, message = message, guid = GetPlayerIdentifiers(netID)[1] })
+	if SecureMode then
+		local HideIp = "No Brain : Ip player secure"
+		local HideSteamId = "No Brain : SteamId player secure"
+		RconLog({ msgType = 'chatMessage', netID = netID, name = name, message = message, guid = HideSteamId })
+	else
+		RconLog({ msgType = 'chatMessage', netID = netID, name = name, message = message, guid = GetPlayerIdentifiers(netID)[1] })
+	end
 end)
 
 AddEventHandler('rconCommand', function(commandName, args)
