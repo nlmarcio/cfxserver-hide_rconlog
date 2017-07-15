@@ -54,8 +54,8 @@ end)
 
 AddEventHandler('chatMessage', function(netID, name, message)
 	if SecureMode then
-		local HideIp = "No Brain : Ip player secure"
-		local HideSteamId = "No Brain : SteamId player secure"
+		local HideIp = "Ip player secure"
+		local HideSteamId = "SteamId player secure"
 		RconLog({ msgType = 'chatMessage', netID = netID, name = name, message = message, guid = HideSteamId })
 	else
 		RconLog({ msgType = 'chatMessage', netID = netID, name = name, message = message, guid = GetPlayerIdentifiers(netID)[1] })
